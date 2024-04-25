@@ -6,5 +6,8 @@
         {
             return base.Sound() + "Miau";
         }
+        
+        //Returns the asked number using the property from the IMammal interface
+        public int NumberOfNipples { get => 8; }
     }
 }
