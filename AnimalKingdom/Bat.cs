@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AnimalKingdom
 {
-    public class Bat : Animal
+    public class Bat : Animal, IMammal
     {
         //Added bat sound with the same method from Dog and Cat
         public override string Sound()
