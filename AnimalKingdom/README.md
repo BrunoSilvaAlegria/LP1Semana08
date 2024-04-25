@@ -1,8 +1,6 @@
-``` mermaid
+LP1 Diagram by Bruno Alegria
 
-      ---
-      title: LP1 Diagram by Bruno Alegria
-      ---
+``` mermaid
 
       classDiagram
       class Animal {          
