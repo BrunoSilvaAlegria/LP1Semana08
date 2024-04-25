@@ -86,7 +86,12 @@ namespace PlayerManager1
         /// </summary>
         private void ShowMenu()
         {
-            Console.WriteLine("Welcome choose an option:");
+            Console.WriteLine("Hi there, please choose an option (1,2,3 or 4):");
+            Console.WriteLine("1- Players and Scores");
+            Console.WriteLine("2- Show players scores");
+            Console.WriteLine("3- Players with higher score than...");
+            Console.WriteLine("4- Leave the program :( \n");
+            Console.Write("Your option: ");
         }
 
         /// <summary>
@@ -94,15 +99,11 @@ namespace PlayerManager1
         /// </summary>
         private void InsertPlayer()
         {
-            
-            string name = "";
-            string score = "";
-
             Console.WriteLine("Insert name: ");
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
 
             Console.WriteLine("Insert score: ");
-            score = Console.ReadLine();
+            string score = Console.ReadLine();
             int numScore = int.Parse(score);
         }
 
@@ -131,11 +132,10 @@ namespace PlayerManager1
         {
             
             string score;
-            int minScore = 0;
 
             Console.WriteLine("Insert minimum score: ");
             score =  Console.ReadLine();
-            minScore = int.Parse(score);
+            int minScore = int.Parse(score);
 
             foreach (Player player in GetPlayersWithScoreGreaterThan(minScore))
             {
