@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Intrinsics.Arm;
 
 namespace LootSort 
 {
@@ -29,29 +30,36 @@ namespace LootSort
             Value = value;
         }
 
-        public bool CompareStrings(string s1, string s2) 
+        /// <summary>
+        /// Method that initially orders its elements by loot type, alphabetically.
+        /// If its not possible to do it that way, then it will order by loot value
+        /// (from the most valuable to the least valuable). 
+        /// </summary>
+        /// <param name="other">Loot being compared</param>
+        /// <returns></returns>
+        public int CompareTo(Loot other)
         {
-            if (s1.Length != s2.Length) return false;
-            for (int i = 0; i < s1.Length && i < s2.Length; i++)
-            {
-                if (s1[i] > s2[i] || s1[i] < s2[i]) return false;
-            }
-            return true;
-        }   
+            int result;
+            result = string.Compare(this.Kind.ToString(), 
+            other.Kind.ToString());
 
-        
-        public int Compare(Loot l1, Loot l2)
-        {
-            int ord;
-            if (true)
+            if (result == 0)
             {
-                ord = l1.Kind.CompareTo(l2.Kind);
+                if (this.Value > other.Value)
+                {
+                    result = 1;
+                }
+                else if (this.Value < other.Value) 
+                {
+                    result = -1;
+                }
+                else
+                {
+                    result = string.Compare(this.Description.ToString(), 
+                    other.Description.ToString()); 
+                }
             }
-            else
-            {
-                ord = l2.Kind.CompareTo(l1.Kind);
-            }
-            return ord;
+            return result;
         }
 
         /// <summary>
