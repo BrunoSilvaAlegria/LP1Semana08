@@ -17,8 +17,8 @@ namespace PlayerManager4
         /// Method that allows the Names of the players to be compared and the 
         /// list's order to be defined with help of the CompareByName constructor
         /// </summary>
-        /// <param name="p1"></param>
-        /// <param name="p2"></param>
+        /// <param name="p1">First player name</param>
+        /// <param name="p2">Second player name</param>
         /// <returns>An integer value that indicates the relative order of the 
         /// two objects</returns>
         
