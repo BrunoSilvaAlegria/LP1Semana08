@@ -162,8 +162,7 @@ namespace PlayerManager2
                     yield return player; //More efficient solution.
                 }
             }
-
-            
+            yield break;            
         }
     }
 }

@@ -163,8 +163,7 @@ namespace PlayerManager3
                     yield return player; //More efficient solution.
                 }
             }
-
-            
+            yield break; //Guarantees that a player's score is only analyzed once.            
         }
     }
 }
